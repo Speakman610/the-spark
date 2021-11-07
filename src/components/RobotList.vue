@@ -9,9 +9,9 @@
     <div class="image" v-bind:style="{ backgroundColor: robot.color }">
         <img :src="robot.avatar">
     </div>
-    <!-- <div class="love">
-        <button class="auto">Info</button>
-    </div> -->
+    <div class="love">
+        <button class="auto" v-on:click.prevent="select(robot)">Look at Profile</button>
+    </div>
     </div>
 </div>
 </div>
@@ -22,6 +22,13 @@ export default {
   name: 'RobotList',
   props: {
     robots: Array
+  },
+  methods: {
+      select(robot) {
+          this.$root.$data.previous = robot;
+          this.$root.$data.last = 1;
+          this.$router.push('/last-viewed')
+      }
   }
 }
 </script>
@@ -45,7 +52,7 @@ export default {
   margin-top: 50px;
   width: 200px;
   border: 2px solid #333;
-  background-color: black;
+  background-color: rgb(24, 56, 124);
 }
 
 .robot img {
@@ -83,7 +90,7 @@ export default {
 
 button {
   height: 50px;
-  background: #000;
+  background: rgb(24, 56, 124);
   color: white;
   border: none;
 }

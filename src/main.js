@@ -5,7 +5,9 @@ import router from './router'
 import mock from './mock-data.js'
 
 let data = {
-  robots: mock
+  robots: mock,
+  last: 0,
+  previous: {}
 }
 
 new Vue({

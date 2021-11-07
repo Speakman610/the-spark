@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Match from '../views/Match.vue'
+import Profile from '../views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/match',
     name: 'Match',
     component: Match
+  },
+  {
+    path: '/last-viewed',
+    name: 'LastViewed',
+    component: Profile
   }
 ]
 
