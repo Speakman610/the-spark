@@ -3,15 +3,14 @@
 <div class="robots">
     <div class="robot" v-for="robot in robots" :key="robot.id">
     <div class="info">
-        <h1>{{robot.human_name}}</h1>
+        <h1>"{{robot.human_name}}"</h1>
         <p>{{robot.name}}</p>
     </div>
-    <div class="image">
+    <div class="image" v-bind:style="{ backgroundColor: robot.color }">
         <img :src="robot.avatar">
     </div>
-    <!-- <div class="price">
-        <h2>{{product.price}}</h2>
-        <button class="auto">Add to Cart</button>
+    <!-- <div class="love">
+        <button class="auto">Info</button>
     </div> -->
     </div>
 </div>
@@ -45,6 +44,8 @@ export default {
   margin: 10px;
   margin-top: 50px;
   width: 200px;
+  border: 2px solid #333;
+  background-color: black;
 }
 
 .robot img {
@@ -61,7 +62,7 @@ export default {
 }
 
 .info {
-  background: #F2921D;
+  background: #fcd4d7;
   color: #000;
   padding: 10px 30px;
   height: 80px;
@@ -78,11 +79,6 @@ export default {
 .info p {
   margin: 0px;
   font-size: 10px;
-}
-
-
-.price {
-  display: flex;
 }
 
 button {
